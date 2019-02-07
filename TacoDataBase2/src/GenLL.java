@@ -59,5 +59,35 @@ public class GenLL <T>{
 			prev.link = curr.link; 
 			curr = curr.link; //what was at curr is now lost
 		}
+		else if(curr != null) {
+			head = head.link; // cutting off the head
+		}
+	}
+	public void print() {//print all data
+		ListNode temp = head;
+		while(temp != null) {
+			System.out.println(temp.data);
+			temp = temp.link;
+		}
+	}
+	public boolean isContained(T aData) {// will look for any data with that structure
+		return this.findNodeWith(aData) != null;
+	}
+	public void gotoItem(T aData) { //will point the pointer to the data
+		ListNode temp = this.findNodeWith(aData);
+		if(temp == null) 
+			return;
+		this.resetCurr();
+		while(this.HasMore() && curr != temp)//will move the node
+			this.goToNext();
+	}
+	private ListNode findNodeWith(T aData) {//this will find the data for the isContained
+		ListNode temp = head;
+		while(temp != null) {
+			if(temp.data.equals(aData))
+				return temp;
+			temp = temp.link;
+		}
+		return null;
 	}
 }
