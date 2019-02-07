@@ -42,5 +42,21 @@ public class Taco {
 		else
 			this.rating = 1;
 	}
-	
+	public String toString() {
+		return this.name + " " + this.loc + " " +this.price + " " + this.rating;
+	}
+	public boolean equals(Taco aTaco) {
+		return aTaco != null &&
+				this.name.equals(aTaco.getName()) &&
+				this.loc.equals(aTaco.getLoc()) &&
+				this.price == aTaco.getPrice() &&
+				this.rating == aTaco.getRating();
+	}
+	public boolean equals(Object o) {//Overload
+		return this.equals((Taco)o);
+	}
+	public static void main(String[] args) {
+		Taco t = new Taco();
+		
+	}
 }
