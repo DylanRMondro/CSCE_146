@@ -49,9 +49,15 @@ public class GenLL <T>{
 		}
 	}
 	public void insetAfterCurrent(T aData) {
-		if(curr == null)
+		if(curr == null) //if there is no before curr return null
 			return;
 		ListNode newNode = new ListNode(aData, curr.link);
 		curr.link = newNode;
+	}
+	public void deletCurrent() {
+		if(curr != null && prev != null) { //none are pointing to the head
+			prev.link = curr.link; 
+			curr = curr.link; //what was at curr is now lost
+		}
 	}
 }
