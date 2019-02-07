@@ -6,11 +6,11 @@ public class TacoFrontEnd {
 		TacoDB tacodb = new TacoDB();
 		Scanner key = new Scanner(System.in);
 		while(true) {
-			printOps();
+			//printOps();
 			int choice = key.nextInt();
 			switch(choice) {
 			case 1:
-				System.out.println(");
+				//System.out.println(");
 			}
 		}
 
