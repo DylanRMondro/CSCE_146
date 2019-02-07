@@ -32,4 +32,26 @@ public class GenLL <T>{
 	public void resetCurr() { //points the curr to the head
 		curr = head;
 	}
+	public boolean HasMore() {
+		return curr != null; //if doesnt return null we have more // if it does return null than we dont have more
+	}
+	public void insert(T aData) {
+		ListNode newNode = new ListNode(aData, null);
+		if(head == null) {//will make a new node if there is not one already
+			head = newNode;
+			curr = head;
+			return;
+		}
+		ListNode temp = head;
+		while(temp.link != null) { //coping new data to links
+			temp = temp.link;
+		temp.link = newNode;
+		}
+	}
+	public void insetAfterCurrent(T aData) {
+		if(curr == null)
+			return;
+		ListNode newNode = new ListNode(aData, curr.link);
+		curr.link = newNode;
+	}
 }
