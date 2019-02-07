@@ -53,10 +53,13 @@ public class Taco {
 				this.rating == aTaco.getRating();
 	}
 	public boolean equals(Object o) {//Overload
-		return this.equals((Taco)o);
+		return this.equals((Taco)o);//making o and Taco object
 	}
+	/*
 	public static void main(String[] args) {
 		Taco t = new Taco();
 		
-	}
+	}*/
+	
+	
 }
