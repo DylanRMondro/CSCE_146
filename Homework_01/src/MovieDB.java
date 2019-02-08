@@ -1,4 +1,5 @@
 //Dylan Mondro
+import java.io.File;
 import java.util.*;
 public class MovieDB {
 	private GenLinkedList<Movie> movie;
@@ -23,14 +24,11 @@ public class MovieDB {
 		try {
 			Scanner fileScanner = new Scanner(new File(fileName));
 			while(fileScanner.hasNextLine()) {
-			String fileLine = fileScanner.nextLine();
-			String[] splitLine = fileLine.split(DELM);
-			if(splitLine.length != 4)
-				continue;
-			this.addMovie(new Movie(splitLine[0]),
-					splitLine[1],
-					Double.parseDouble(splitLine[2]),
-					Integer.parseInt(splitLine[3]));
+				String fileLine = fileScanner.nextLine();
+				String[] splitLine = fileLine.split(DELM);
+				if(splitLine.length != 4)
+					continue;
+				this.addMovie(new Movie(splitLine[0], splitLine[1], Double.parseDouble(splitLine[2]), Integer.parseInt(splitLine[3]));
 			}
 			fileScanner.close();
 		}
