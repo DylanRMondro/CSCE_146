@@ -39,12 +39,12 @@ public class MovieDBFrontend {
 			case 2:
 				System.out.println("Enter the file name for the Movie DataBase");
 				String nameAFileO = key.nextLine();
-				movieData.printToFile(nameAFileO, movie);
+				movieData.printToFile(nameAFileO);
 				break;
 			case 3:
 				System.out.println("Enter the file name for the Movie DataBase");
 				String nameAFileI = key.nextLine();
-				movieData.readFromFile(nameAFileI, movie);
+				movieData.readFromFile(nameAFileI);
 				break;
 			case 4:
 				movieData.printMovies();
@@ -59,7 +59,9 @@ public class MovieDBFrontend {
 				System.out.println("Enter the box office gross of the movie");
 				aBoxOfficeGross = key.nextDouble();
 				System.out.println("Enter the rating of the movie");
-				
+				aRating = key.nextInt();
+				aMovie = new Movie(aName, aDirector, aYear, aBoxOfficeGross,aRating );
+				movieData.removeMovie(aMovie);
 			}
 		}
 	}
