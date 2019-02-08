@@ -29,6 +29,12 @@ public class GenLinkedList <M>{
 		prev = curr;
 		curr = curr.link;
 	}
+	public void goToPast() {
+		if(curr == null)
+			return;
+		curr = prev;
+		curr = curr.link;
+	}
 	public void resetCurr() {
 		curr = head;
 	}
@@ -62,5 +68,32 @@ public class GenLinkedList <M>{
 		else if(curr != null) {
 			head = head.link;
 		}
+	}
+	public void print() {
+		ListNode temp = head;
+		while(temp != null) {
+			System.out.print(temp.data);
+			temp = temp.link;
+		}
+	}
+	public boolean isContained(M aData) {
+		return this.findNodeWith(aData) != null;
+	}
+	public void gotoItem(M aData) {
+		ListNode temp = this.findNodeWith(aData);
+		if(temp == null)
+			return;
+		this.resetCurr();
+		while(this.hasMore() && curr != temp)
+			this.goToNext();
+	}
+	public ListNode findNodeWith(M aData) {
+		ListNode temp = head;
+		while(temp != null) {
+			if(temp.data.equals(aData))
+				return temp;
+			temp = temp.link;
+		}
+		return null;
 	}
 }
