@@ -21,7 +21,18 @@ public class MovieDB {
 	}
 	public void readFromFile(String fileName) {// will read from a file that we create
 		try {
-			
+			Scanner fileScanner = new Scanner(new File(fileName));
+			while(fileScanner.hasNextLine()) {
+			String fileLine = fileScanner.nextLine();
+			String[] splitLine = fileLine.split(DELM);
+			if(splitLine.length != 4)
+				continue;
+			this.addMovie(new Movie(splitLine[0]),
+					splitLine[1],
+					Double.parseDouble(splitLine[2]),
+					Integer.parseInt(splitLine[3]));
+			}
+			fileScanner.close();
 		}
 		catch(Exception e) {
 			System.out.println(e);
