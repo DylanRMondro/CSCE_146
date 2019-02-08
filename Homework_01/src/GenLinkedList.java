@@ -14,4 +14,34 @@ public class GenLinkedList <M>{
 	public GenLinkedList() {
 		head = curr = prev = null;
 	}
+	public M getCurrent() {
+		if(curr != null)
+			return curr.data;
+		return null;
+	}
+	public void setCurrent(M aData) {
+		if(curr != null)
+			curr.data = aData;
+	}
+	public void goToNext() {
+		if(curr == null)
+			return;
+		prev = curr;
+		curr = curr.link;
+	}
+	public void resetCurr() {
+		curr = head;
+	}
+	public boolean hasMore() {
+		return curr != null;
+	}
+	public void insert(M aData) {
+		ListNode newNode = new ListNode(aData, null);
+		if(head == null) {
+			head = newNode;
+			curr = head;
+			return;
+		}
+		return;
+		}
 }
