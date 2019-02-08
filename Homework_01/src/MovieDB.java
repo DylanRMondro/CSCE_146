@@ -34,21 +34,17 @@ public class MovieDB {
 			System.out.println(e);
 		}
 	}
-	public static Movie[] readFromFile(String fileName) {// will read from a file that we create
+	public void readFromFile(String fileName) {
 		try {
-			Scanner fileScanner = new Scanner(new File(fileName));
-			while(fileScanner.hasNextLine()) {
-				String fileLine = fileScanner.nextLine();
-				String[] splitLine = fileLine.split(DELM);
-				if(splitLine.length != 4)
-					continue;
-				this.addMovie(new Movie(splitLine[0],
-						splitLine[1],
-						Double.parseDouble(splitLine[2]), Integer.parseInt(splitLine[3])));
+			Scanner sc = new Scanner(new File(fileName));
+			for(int i=0; sc.hasNextLine(); i++) {
+				if(!sc.hasNextLine())
+					break;
+				else if(sc.hasNextLine())
+					System.out.print(sc.hasNextLine());
 			}
-			fileScanner.close();
 		}
-		catch(Exception e) {
+		catch(Exception e){
 			System.out.println(e);
 		}
 	}
