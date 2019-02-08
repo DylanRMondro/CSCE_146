@@ -42,6 +42,25 @@ public class GenLinkedList <M>{
 			curr = head;
 			return;
 		}
-		return;
+		ListNode temp = head;
+		while(temp.link != null) {
+			temp = temp.link;
+		temp.link = newNode;
 		}
+	}
+	public void inserAfterCurrent(M aData) {
+		if(curr == null)
+			return;
+		ListNode newNode = new ListNode(aData, curr.link);
+		curr.link = newNode;
+	}
+	public void deleCurrent() {
+		if(curr != null && prev != null) {
+			prev.link = curr.link;
+			curr = curr.link;
+		}
+		else if(curr != null) {
+			head = head.link;
+		}
+	}
 }
