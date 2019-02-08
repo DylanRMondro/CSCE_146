@@ -28,7 +28,7 @@ public class MovieDB {
 				String[] splitLine = fileLine.split(DELM);
 				if(splitLine.length != 4)
 					continue;
-				this.addMovie(new Movie(splitLine[0], splitLine[1], Double.parseDouble(splitLine[2]), Integer.parseInt(splitLine[3]));
+				this.addMovie(new Movie(splitLine[0], splitLine[1], Double.parseDouble(splitLine[2]), Integer.parseInt(splitLine[3])));
 			}
 			fileScanner.close();
 		}
