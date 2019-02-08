@@ -1,4 +1,4 @@
-
+//Dylan Mondro
 public class Movie {
 	private String name, director;
 	private int year, boxOfficeGross, rating;
