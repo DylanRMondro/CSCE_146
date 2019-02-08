@@ -1,5 +1,5 @@
 //Dylan Mondro
-import java.io.File;
+import java.io.*;
 import java.util.*;
 public class MovieDB {
 	private GenLinkedList<Movie> movie;
@@ -17,10 +17,24 @@ public class MovieDB {
 	public void printMovies() {
 		//TODO
 	}
-	public void printToFile() {
-		//TODO
+	public void printToFile(String fileName, Movie[] movie) {
+		try {
+			PrintWriter fileWriter = new PrintWriter(
+					new FileOutputStream(fileName));
+			for(Movie m : movie) {
+				fileWriter.println(m.getName()+DELM+
+						m.getDirector()+DELM+
+						m.getYear()+DELM+
+						m.getRating()+DELM+
+						m.getBoxOfficeGross());
+			}
+			fileWriter.close();
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
 	}
-	public void readFromFile(String fileName) {// will read from a file that we create
+	public static Movie[] readFromFile(String fileName) {// will read from a file that we create
 		try {
 			Scanner fileScanner = new Scanner(new File(fileName));
 			while(fileScanner.hasNextLine()) {
@@ -28,7 +42,9 @@ public class MovieDB {
 				String[] splitLine = fileLine.split(DELM);
 				if(splitLine.length != 4)
 					continue;
-				this.addMovie(new Movie(splitLine[0], splitLine[1], Double.parseDouble(splitLine[2]), Integer.parseInt(splitLine[3])));
+				this.addMovie(new Movie(splitLine[0],
+						splitLine[1],
+						Double.parseDouble(splitLine[2]), Integer.parseInt(splitLine[3])));
 			}
 			fileScanner.close();
 		}
