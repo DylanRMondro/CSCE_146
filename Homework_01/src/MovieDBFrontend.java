@@ -30,7 +30,7 @@ public class MovieDBFrontend {
 				System.out.println("Enter the year of the movie");
 				int aYear = key.nextInt();
 				System.out.println("Enter the box office gross of the movie");
-				int aBoxOfficeGross = key.nextInt();
+				double aBoxOfficeGross = key.nextDouble();
 				System.out.println("Enter the rating of the movie");
 				int aRating = key.nextInt();
 				Movie aMovie = new Movie(aName, aDirector, aYear, aBoxOfficeGross,aRating );
@@ -49,6 +49,17 @@ public class MovieDBFrontend {
 			case 4:
 				movieData.printMovies();
 				break;
+			case 5:
+				System.out.println("Enter the name of the movie");
+				aName = key.nextLine();
+				System.out.println("Enter the director of the movie");
+				aDirector = key.nextLine();
+				System.out.println("Enter the year of the movie");
+				aYear = key.nextInt();
+				System.out.println("Enter the box office gross of the movie");
+				aBoxOfficeGross = key.nextDouble();
+				System.out.println("Enter the rating of the movie");
+				
 			}
 		}
 	}

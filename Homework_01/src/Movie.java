@@ -1,14 +1,15 @@
 //Dylan Mondro
 public class Movie {
 	private String name, director;
-	private int year, boxOfficeGross, rating;
+	private int year, rating;
+	private double boxOfficeGross;
 	public Movie() {
 		this.name = director = "none";
 		this.year = 1888; //Year of the first movie
-		this.boxOfficeGross = 0;
+		this.boxOfficeGross = 0.0;
 		this.rating = 1; //1-5
 	}
-	public Movie(String Aname, String aDirector, int aYear, int baBxOfficeGross, int aRating) {
+	public Movie(String aName, String aDirector, int aYear, double baBxOfficeGross, int aRating) {
 		
 	}
 	public String getName() {
@@ -32,11 +33,11 @@ public class Movie {
 		else
 			this.year = 1888; //if later than 1888 then it will set it back to 1888
 	}
-	public int getBoxOfficeGross() {
+	public double getBoxOfficeGross() {
 		return boxOfficeGross;
 	}
 	public void setBoxOfficeGross(int boxOfficeGross) {
-		if(boxOfficeGross > 0) //can't be any lower than 0
+		if(boxOfficeGross > 0.0) //can't be any lower than 0
 			this.boxOfficeGross = boxOfficeGross;
 		else
 			this.boxOfficeGross = 0;

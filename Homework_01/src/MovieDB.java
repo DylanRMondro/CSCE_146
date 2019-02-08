@@ -4,6 +4,7 @@ import java.util.*;
 public class MovieDB {
 	private GenLinkedList<Movie> movie;
 	public static final String DELM = "\t";
+	GenLinkedList genLL = new GenLinkedList();
 	public MovieDB() {
 		movie = new GenLinkedList<Movie>();//WIll create a new instance of movie
 	}
@@ -15,7 +16,6 @@ public class MovieDB {
 		movie.deleCurrent();
 	}
 	public void printMovies() {
-		GenLinkedList genLL = new GenLinkedList();
 		genLL.print();
 	}
 	public void printToFile(String fileName, Movie[] movie) {
