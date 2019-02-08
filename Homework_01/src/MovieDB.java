@@ -14,8 +14,19 @@ public class MovieDB {
 		movie.gotoItem(aMovie);
 		movie.deleCurrent();
 	}
-	public void printMovies() {
-		//TODO
+	public void printMovies(String fileName) {
+		try {
+			Scanner sc = new Scanner(new File(fileName));
+			for(int i=0; sc.hasNextLine(); i++) {
+				if(!sc.hasNextLine())
+					break;
+				else if(sc.hasNextLine())
+					System.out.print(sc.hasNextLine());
+			}
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
 	}
 	public void printToFile(String fileName, Movie[] movie) {
 		try {
@@ -34,14 +45,14 @@ public class MovieDB {
 			System.out.println(e);
 		}
 	}
-	public void readFromFile(String fileName) {
+	public void readFromFile(String fileName, String[] movie) {
 		try {
 			Scanner sc = new Scanner(new File(fileName));
 			for(int i=0; sc.hasNextLine(); i++) {
 				if(!sc.hasNextLine())
 					break;
 				else if(sc.hasNextLine())
-					System.out.print(sc.hasNextLine());
+					movie[i] = sc.nextLine();
 			}
 		}
 		catch(Exception e){
