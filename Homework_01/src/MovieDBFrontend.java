@@ -46,7 +46,9 @@ public class MovieDBFrontend {
 				String nameAFileI = key.nextLine();
 				movieData.readFromFile(nameAFileI, movie);
 				break;
-			
+			case 4:
+				movieData.printMovies();
+				break;
 			}
 		}
 	}

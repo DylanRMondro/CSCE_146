@@ -14,19 +14,9 @@ public class MovieDB {
 		movie.gotoItem(aMovie);
 		movie.deleCurrent();
 	}
-	public void printMovies(String fileName) {
-		try {
-			Scanner sc = new Scanner(new File(fileName));
-			for(int i=0; sc.hasNextLine(); i++) {
-				if(!sc.hasNextLine())
-					break;
-				else if(sc.hasNextLine())
-					System.out.print(sc.hasNextLine());
-			}
-		}
-		catch(Exception e){
-			System.out.println(e);
-		}
+	public void printMovies() {
+		GenLinkedList genLL = new GenLinkedList();
+		genLL.print();
 	}
 	public void printToFile(String fileName, Movie[] movie) {
 		try {
