@@ -18,10 +18,11 @@ public class MovieDB {
 	public void printMovies() {
 		genLL.print();
 	}
-	public void printToFile(String fileName, Movie[] movie) {
+	public void printToFile(String fileName) {
 		try {
 			PrintWriter fileWriter = new PrintWriter(
 					new FileOutputStream(fileName));
+			Movie[] movie = new Movie[500];
 			for(Movie m : movie) {
 				fileWriter.println(m.getName()+DELM+
 						m.getDirector()+DELM+
@@ -35,9 +36,10 @@ public class MovieDB {
 			System.out.println(e);
 		}
 	}
-	public void readFromFile(String fileName, String[] movie) {
+	public void readFromFile(String fileName ) {
 		try {
 			Scanner sc = new Scanner(new File(fileName));
+			String[] movie = new String[500];
 			for(int i=0; sc.hasNextLine(); i++) {
 				if(!sc.hasNextLine())
 					break;
