@@ -68,11 +68,11 @@ public class GenLinkedList <M>{
 			else if(curr != null) {
 				head = head.link;
 			}
-			else if(curr == null) {
+			else if(curr == null) { // if no movie was found
 				System.out.println("No movie found");
 			}
 	}
-	public void print() {
+	public void print() { //used to print 
 		ListNode temp = head;
 		while(temp != null) {
 			System.out.print(temp.data);

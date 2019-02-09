@@ -31,6 +31,7 @@ public class Movie {
 		if(year >= 1888) //can't be older than 1888
 			this.year = year;
 		else
+			System.out.println("The year cannot be any older than 188");
 			this.year = 1888; //if later than 1888 then it will set it back to 1888
 	}
 	public double getBoxOfficeGross() {
@@ -40,6 +41,7 @@ public class Movie {
 		if(boxOfficeGross > 0.0) //can't be any lower than 0
 			this.boxOfficeGross = boxOfficeGross;
 		else
+			System.out.println("The box office gross can not be any smaller than 0");
 			this.boxOfficeGross = 0;
 	}
 	public int getRating() {
@@ -49,6 +51,7 @@ public class Movie {
 		if(rating > 1 || rating < 5) //Has to be within 1-5
 			this.rating = rating;
 		else
+			System.out.println("The rating cannot be any smaller than 1");
 			this.rating = 1;// if less than 1 it will set it back to 1
 	}
 	public boolean equals(Movie aMovie) {
