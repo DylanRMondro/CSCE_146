@@ -61,13 +61,16 @@ public class GenLinkedList <M>{
 		curr.link = newNode;
 	}
 	public void deleCurrent() {
-		if(curr != null && prev != null) {
-			prev.link = curr.link;
-			curr = curr.link;
-		}
-		else if(curr != null) {
-			head = head.link;
-		}
+			if(curr != null && prev != null) {
+				prev.link = curr.link;
+				curr = curr.link;
+			}
+			else if(curr != null) {
+				head = head.link;
+			}
+			else if(curr == null) {
+				System.out.println("No movie found");
+			}
 	}
 	public void print() {
 		ListNode temp = head;

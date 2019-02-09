@@ -23,6 +23,7 @@ public class MovieDBFrontend {
 				stop = 0;
 				break;
 			case 1:
+				String aclear = key.nextLine();
 				System.out.println("Enter the name of the movie");
 				String aName = key.nextLine();
 				System.out.println("Enter the name of the director");
@@ -37,19 +38,23 @@ public class MovieDBFrontend {
 				movieData.addMovie(aMovie);
 				break;
 			case 2:
+				aclear = key.nextLine();
 				System.out.println("Enter the file name for the Movie DataBase");
 				String nameAFileO = key.nextLine();
 				movieData.printToFile(nameAFileO);
 				break;
 			case 3:
+				aclear = key.nextLine();
 				System.out.println("Enter the file name for the Movie DataBase");
 				String nameAFileI = key.nextLine();
 				movieData.readFromFile(nameAFileI);
 				break;
 			case 4:
+				aclear = key.nextLine();
 				movieData.printMovies();
 				break;
 			case 5:
+				aclear = key.nextLine();
 				System.out.println("Enter the name of the movie");
 				aName = key.nextLine();
 				System.out.println("Enter the director of the movie");
