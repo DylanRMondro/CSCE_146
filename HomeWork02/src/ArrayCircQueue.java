@@ -6,7 +6,7 @@ public class ArrayCircQueue {
 	private int headIndez;
 	public static final int DEF_SIZE = 2;
 	public ArrayCircQueue() {
-		
+		init(size);
 	}
 	public void init(int size) {
 		if(size <=1) {
