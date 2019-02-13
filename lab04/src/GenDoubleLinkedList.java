@@ -1,5 +1,5 @@
 //Dylan Mondro
-public class GenDoubleLinkedList {
+public class GenDoubleLinkedList<String> {
 	private class ListNode{
 		private String data;
 		private ListNode link;
