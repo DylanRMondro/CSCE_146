@@ -14,7 +14,6 @@ public class Potato {
 		if(time>= 0)
 			this.time = time;
 		else{
-			this.time = 0;
 		}
 	}
 	public void timeRemain(int aTime) {
