@@ -1,7 +1,7 @@
 //Dylan Mondro
 public class Player {
 	private String name;
-	private Boolean inTheGame;
+	private Boolean inTheGame; //quick check for players
 	public Player() {
 		this.name = "It's a me";
 		this.inTheGame = true;
