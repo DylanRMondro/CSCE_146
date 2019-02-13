@@ -17,6 +17,13 @@ public class Potato {
 			this.time = 0;
 		}
 	}
+	public void timeRemain(int aTime) {
+		if(aTime > 1 || aTime <10)
+			this.time = this.time - aTime; // will subtract the amount of time the player wish to hold the potato
+		else 
+			this.time = this.time - 10; //will subtract 10 if the time is incorrect
+			System.out.println("We will assume you meant 10");
+	}
 	
 }
 
