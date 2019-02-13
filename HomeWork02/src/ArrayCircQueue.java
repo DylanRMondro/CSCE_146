@@ -1,12 +1,12 @@
 //Dylan Mondro
 public class ArrayCircQueue {
-	private P[] queue;
+	private T[] queue;
 	private int maxSize;//amount of players
 	private int tailIndex;
-	private int headIndez;
+	private int headIndex;
 	public static final int DEF_SIZE = 2;
 	public ArrayCircQueue() {
-		init(size);
+		init(DEF_SIZE);
 	}
 	public void init(int size) {
 		if(size <=1) {
