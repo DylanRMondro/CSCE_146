@@ -47,11 +47,17 @@ public class GenDoubleLinkedList<String> {
 			curr.data = aData;
 		}
 	}
+	public boolean hadMore() {
+		return curr != null;
+	}
 	public void goToNext() {
 		if(curr != null) {
 			prev = curr;
 			curr = curr.link;
 		}
+	}
+	public void resetCurr() {
+		curr = head;
 	}
 	public void goToPrev() {
 		if(curr == null) {
@@ -81,5 +87,28 @@ public class GenDoubleLinkedList<String> {
 		else {
 			System.out.println("Nope");
 		}
+	}
+	public boolean inList(String aData) {
+		return this.findNodeWith(aData) != null;
+	}
+	public void gotoTiem(String aData) {
+		ListNode temp = this.findNodeWith(aData);
+		if(temp == null) {
+			return;
+		}
+		this.resetCurr();
+		while(this.hadMore() && curr != temp	) {
+			this.goToNext();
+		}
+	}
+	public ListNode findNodeWith(String aData) {
+		ListNode temp = head;
+		while(temp != null) {
+			if(temp.data.equals(aData)) {
+				return temp;
+			}
+			temp = temp.link;
+		}
+		return null;
 	}
 }
