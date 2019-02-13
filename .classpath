@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="src" path="Homework_01/src"/>
-	<classpathentry kind="src" path="TacoDataBase2/src"/>
-	<classpathentry kind="src" path="Tester/src"/>
-	<classpathentry kind="output" path="Homework_01/bin"/>
-</classpath>
