@@ -53,6 +53,13 @@ public class GenDoubleLinkedList<String> {
 			curr = curr.link;
 		}
 	}
+	public void goToPrev() {
+		if(curr == null) {
+			return;
+		}
+		curr = prev;
+		curr = curr.link;
+	}
 	public void reserCurrent() {
 		curr = head;
 	}
