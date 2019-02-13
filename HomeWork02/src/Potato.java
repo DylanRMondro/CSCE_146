@@ -22,7 +22,7 @@ public class Potato {
 			this.time = this.time - aTime; // will subtract the amount of time the player wish to hold the potato
 		else 
 			this.time = this.time - 10; //will subtract 10 if the time is incorrect
-			System.out.println("We will assume you meant 10");
+			System.out.println("We will assume you meant 10 seconds");
 	}
 	
 }
