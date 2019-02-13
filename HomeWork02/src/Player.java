@@ -1,6 +1,6 @@
 //Dylan Mondro
 public class Player {
-	private String name;
+	private String name;//Name of player
 	private Boolean inTheGame; //quick check for players
 	public Player() {
 		this.name = "It's a me";
