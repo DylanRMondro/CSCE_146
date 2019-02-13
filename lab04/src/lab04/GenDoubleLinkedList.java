@@ -2,9 +2,9 @@
 package lab04;
 public class GenDoubleLinkedList {
 	private class ListNode{
-		private int data;
+		private String data;
 		private ListNode link;
-		public ListNode(int aData, ListNode aLink) {
+		public ListNode(String aData, ListNode aLink) {
 			data = aData;
 			link = aLink;
 		}
@@ -15,7 +15,7 @@ public class GenDoubleLinkedList {
 	public GenDoubleLinkedList() {
 		head = curr = prev = null;
 	}
-	public void insert(int aData) {
+	public void insert(String aData) {
 		ListNode newNode = new ListNode(aData, null);
 		if(head ==null) {
 			head = newNode;
@@ -28,22 +28,22 @@ public class GenDoubleLinkedList {
 		}
 		temp.link = newNode;
 	}
-	public void inserAfterCurrent(int aData) {
+	public void inserAfterCurrent(String aData) {
 		if(curr == null) {
 			return;
 		}
 		ListNode newNode = new ListNode(aData, curr.link);
 		curr.link = newNode;
 	}
-	public int getCurrent(){
+	public String getCurrent(){
 		if(curr != null) {
 			return curr.data;
 		}
 		else {
-			return 0;
+			return "0";
 		}
 	}
-	public void setCurrent(int aData) {
+	public void setCurrent(String aData) {
 		if(curr != null) {
 			curr.data = aData;
 		}
