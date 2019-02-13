@@ -1,5 +1,4 @@
 //Dylan Mondro
-package lab04;
 public class GenDoubleLinkedList {
 	private class ListNode{
 		private String data;
