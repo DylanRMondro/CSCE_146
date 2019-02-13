@@ -23,7 +23,7 @@ public class Player {
 		this.inTheGame = inTheGame;
 	}
 	public boolean stillInGame() { //the check to see if player are in the game
-		if(name !=null && inTheGame ==true)
+		if(name != null && inTheGame == true)
 			return true;
 		return false;
 	}
