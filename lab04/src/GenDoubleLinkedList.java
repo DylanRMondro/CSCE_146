@@ -27,7 +27,7 @@ public class GenDoubleLinkedList<String> {
 		}
 		temp.link = newNode;
 	}
-	public void inserAfterCurrent(String aData) {
+	public void insertNodeAfterCurrent(String aData) {
 		if(curr == null) {
 			return;
 		}
@@ -39,7 +39,7 @@ public class GenDoubleLinkedList<String> {
 			return curr.data;
 		}
 		else {
-			return "0";
+			return (String) "0";
 		}
 	}
 	public void setCurrent(String aData) {
@@ -47,7 +47,7 @@ public class GenDoubleLinkedList<String> {
 			curr.data = aData;
 		}
 	}
-	public void moveCurrentForward() {
+	public void goToNext() {
 		if(curr != null) {
 			prev = curr;
 			curr = curr.link;
@@ -63,7 +63,7 @@ public class GenDoubleLinkedList<String> {
 			temp = temp.link;
 		}
 	}
-	public void deleteCurrent() {
+	public void deleteCurrentNode() {
 		if(curr != null && prev != null) {
 			prev.link = curr.link;
 			curr = curr.link;
