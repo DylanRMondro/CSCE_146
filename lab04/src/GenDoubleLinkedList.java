@@ -21,11 +21,11 @@ public class GenDoubleLinkedList<String> {
 			curr = head;
 			return;
 		}
-		ListNode temp = head;
-		while(temp.link != null) {
-			temp = temp.link;
+		ListNode adata = head;
+		while(adata.link != null) {
+			adata = adata.link;
 		}
-		temp.link = newNode;
+		adata.link = newNode;
 	}
 	public void insertNodeAfterCurrent(String aData) {
 		if(curr == null) {
@@ -70,10 +70,8 @@ public class GenDoubleLinkedList<String> {
 		curr = head;
 	}
 	public void showList() {
-		ListNode temp = head;
-		while(temp != null) {
-			System.out.println(temp);
-			temp = temp.link;
+		for(ListNode adata = head; adata != null; adata = adata.link) {
+			System.out.println(adata.link);
 		}
 	}
 	public void deleteCurrentNode() {
@@ -92,22 +90,22 @@ public class GenDoubleLinkedList<String> {
 		return this.findNodeWith(aData) != null;
 	}
 	public void gotoTiem(String aData) {
-		ListNode temp = this.findNodeWith(aData);
-		if(temp == null) {
+		ListNode adata = this.findNodeWith(aData);
+		if(adata == null) {
 			return;
 		}
 		this.resetCurr();
-		while(this.hadMore() && curr != temp	) {
+		while(this.hadMore() && curr != adata	) {
 			this.goToNext();
 		}
 	}
 	public ListNode findNodeWith(String aData) {
-		ListNode temp = head;
-		while(temp != null) {
-			if(temp.data.equals(aData)) {
-				return temp;
+		ListNode adata = head;
+		while(adata != null) {
+			if(adata.data.equals(aData)) {
+				return adata;
 			}
-			temp = temp.link;
+			adata = adata.link;
 		}
 		return null;
 	}
