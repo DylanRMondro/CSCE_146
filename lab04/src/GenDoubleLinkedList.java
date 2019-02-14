@@ -16,16 +16,16 @@ public class GenDoubleLinkedList<String> {
 	}
 	public void insert(String aData) {
 		ListNode newNode = new ListNode(aData, null);
-		if(head ==null) {
+		if(head == null) {
 			head = newNode;
 			curr = head;
 			return;
 		}
-		ListNode adata = head;
-		while(adata.link != null) {
-			adata = adata.link;
+		else if(curr.link == null) {
+			curr.link = newNode;
+			newNode = prev;
+			curr = curr.link;
 		}
-		adata.link = newNode;
 	}
 	public void insertNodeAfterCurrent(String aData) {
 		if(curr == null) {
@@ -33,6 +33,8 @@ public class GenDoubleLinkedList<String> {
 		}
 		ListNode newNode = new ListNode(aData, curr.link);
 		curr.link = newNode;
+		newNode = prev;
+		prev = curr.link;
 	}
 	public String getCurrent(){
 		if(curr != null) {
@@ -70,8 +72,9 @@ public class GenDoubleLinkedList<String> {
 		curr = head;
 	}
 	public void showList() {
-		for(ListNode adata = head; adata != null; adata = adata.link) {
-			System.out.println(adata.link);
+		ListNode curr = head;
+		while(curr.link != null) {
+			System.out.println(curr.data);
 		}
 	}
 	public void deleteCurrentNode() {

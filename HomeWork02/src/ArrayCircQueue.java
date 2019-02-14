@@ -15,4 +15,5 @@ public class ArrayCircQueue {
 		tailIndex = headIndex = 0;
 		queue = (P[])(new Object[size]);
 	}
+	
 }
