@@ -17,7 +17,7 @@ public class HotPotatoFrontEnd {
 			System.out.println("Enter the palyer" + i + "name");
 			String aName = key.nextLine();
 			Player py = new Player(aName, t);
-			py = ay.enqueue(py.getName());
+			py = (Player) ay.enqueue(py.getName());
 		}
 	}
 
