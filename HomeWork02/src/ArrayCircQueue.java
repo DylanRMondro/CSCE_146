@@ -43,4 +43,16 @@ public class ArrayCircQueue <Player> {
 	public Player peek() {
 		return queue[0];
 	}
+	
+	//print
+	public void showQueeu() {
+		for(Player node : queue) {
+			if(node == null) {
+				break;
+			}
+			else {
+				System.out.println(node.toString());
+			}
+		}
+	}
 }
