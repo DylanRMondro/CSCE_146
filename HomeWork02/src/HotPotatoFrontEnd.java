@@ -15,11 +15,12 @@ public class HotPotatoFrontEnd {
 		ArrayCircQueue ay = new ArrayCircQueue(aPlayer);
 		String buffer = key.nextLine();
 		for(int i=0; i<aPlayer; i++) {
-			System.out.println("Enter the palyer" + i + " name");
+			System.out.println("Enter the palyer" + (i+1) + " name");
 			String aName = key.nextLine();
 			Player py = new Player(aName, t);
-			ay.enqueue(py.getName());
+			ay.enqueue(py);
 		}
+		System.out.println("The players in the list are:");
 		ay.showQueeu();
 	}
 }

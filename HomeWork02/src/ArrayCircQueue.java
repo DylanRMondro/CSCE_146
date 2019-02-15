@@ -16,7 +16,7 @@ public class ArrayCircQueue <Player> {
 	}
 	
 	//add to queue
-	public Player enqueue (Player aData) {
+	public Player enqueue (Player aData, Boolean aTrue) { // Will get the name and if the are in the game
 		if(tailIndex >= queue.length) { //if the queue is full
 			System.out.println("Player list is full");
 			return aData;
@@ -51,7 +51,7 @@ public class ArrayCircQueue <Player> {
 				break;
 			}
 			else {
-				System.out.println(node.toString());
+				System.out.println();
 			}
 		}
 	}
