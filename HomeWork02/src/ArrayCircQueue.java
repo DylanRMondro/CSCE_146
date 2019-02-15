@@ -1,19 +1,45 @@
 //Dylan Mondro
-public class ArrayCircQueue {
+public class ArrayCircQueue <T> {
 	private T[] queue;
-	private int maxSize;//amount of players
 	private int tailIndex;
-	private int headIndex;
+	//private int headIndex;
 	public static final int DEF_SIZE = 2;
+	
+	//intitalize the queue
 	public ArrayCircQueue() {
-		init(DEF_SIZE);
+		queue = (T[]) new Object [DEF_SIZE];
+		this.tailIndex = 0;
 	}
-	public void init(int size) {
-		if(size <=1) {
-			return;
-		}
-		tailIndex = headIndex = 0;
-		queue = (P[])(new Object[size]);
+	public ArrayCircQueue(int aSize) {// aSize is the amount of players in the game
+		queue = (T[]) new Object[aSize];
+		this.tailIndex = 0;
 	}
 	
+	//add to queue
+	public void enqueue (T aData) {
+		if(tailIndex >= queue.length) { //if the queue is full
+			System.out.println("Player list is full");
+			return;
+		}
+		else { // this will add the player to the queue
+			queue[tailIndex] = aData;
+			tailIndex ++;
+		}
+	}
+	
+	//this will remove the player if they guess to high of a number
+	public T dequeue() {
+		T ret = queue[0];
+		for(int i=0; i<queue.length-1; i++) {
+			queue[i] = queue[i+1];
+		}
+		queue[queue.length-1] = null;
+		tailIndex --;
+		return ret;
+	}
+	
+	//used to see the first line
+	public T peek() {
+		return queue[0];
+	}
 }
