@@ -41,5 +41,14 @@ public class GenLLQueue<t> {
 		return head.data;
 	}
 	
-	
+	//print to console
+	public void printQueue() {
+		ListNode position = head;
+		System.out.print("\n");
+		while(position != null) {
+			System.out.print(position.data+"\n");
+			position = position.link;
+		}
+		System.out.println("\n");
+	}
 }
