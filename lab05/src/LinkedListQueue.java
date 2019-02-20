@@ -1,26 +1,31 @@
-
+//Dylan Mondro
 public class LinkedListQueue <T> {
 	private class ListNode{
 		private T data;
 		private ListNode link;
-		ListNode(T aData, ListNode aLink){
-			data = aData;
-			link = aLink;
-		}
 	}
-	
 	private ListNode head;
+	private ListNode tail;
+	
 	public LinkedListQueue() {
-		head = null;
+		this.head = null;
+		this.tail = null;
 	}
 	
-	public void push(T aData) {
-		ListNode newNode = new ListNode(aData, head);
-		head = newNode;
-	}
-	
-	public T pop() {
+	public void enqueue(T aData) {
+		ListNode newNode = new ListNode();
+		newNode.data = aData;
 		if(head == null) {
+			head = tail = newNode;
+			return;
+		}
+		tail.link = newNode;
+		tail = tail.link;
+	}
+	
+	public T dequeue(){
+		if(head == null) {
+			System.out.println("Empty Queue");
 			return null;
 		}
 		T ret = head.data;
@@ -29,15 +34,15 @@ public class LinkedListQueue <T> {
 	}
 	
 	public T peek() {
-		if(head == null) {
-			return null;
-		}
 		return head.data;
 	}
 	
-	public void print() {
-		for(ListNode temp = head; temp!= null; temp = temp.link) {
-			System.out.println(temp.data);
+	public void Print() {
+		ListNode position = head;
+		while(position != null) {
+			System.out.print(position.data);
+			position = position.link;
 		}
+		System.out.println("\n");
 	}
 }
