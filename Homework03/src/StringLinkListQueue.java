@@ -1,5 +1,6 @@
 //Dylan Mondro
 public class StringLinkListQueue <String>{
+	//this will keep track of the robots movements 
 	private class ListNode{
 		private String data;
 		private ListNode link;
