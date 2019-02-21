@@ -1,5 +1,5 @@
 //Dylan Mondro
-public class LinkedListQueue <T> {
+public class LinkedListQueue <T>  {
 	private class ListNode{
 		private T data;
 		private ListNode link;
@@ -39,6 +39,7 @@ public class LinkedListQueue <T> {
 	
 	public void Print() {
 		ListNode position = head;
+		System.out.println("\n");
 		while(position != null) {
 			System.out.print(position.data);
 			position = position.link;
