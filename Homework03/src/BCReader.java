@@ -7,7 +7,6 @@ public class BCReader {
 	private int START_COR = 0; //Starting coordinate
 	private StringLinkListQueue <String> Queue; //creates the command queue
 	private Board LookABoard = new Board();
-	public static final String DELM = "\t";
 	
 	//These are lines from commands.txt
 	private String up = "Move Up";
@@ -23,6 +22,7 @@ public class BCReader {
 				while((line = br.readLine()) !=null) {
 					LookABoard.createBoard(line);
 				}
+				br.close();
 			}
 			catch(Exception e) {
 				System.out.println("Could not find the file with name: "+aFile);
@@ -37,7 +37,9 @@ public class BCReader {
 				String line;
 				while((line = br.readLine()) !=null) {
 					Queue.enqueue(line);
-				}			}
+				}		
+				br.close();
+			}
 			catch(Exception e) {
 				System.out.println("Could not find the file with name: "+aFile);
 						
