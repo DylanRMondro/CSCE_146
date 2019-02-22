@@ -6,14 +6,15 @@ public class BoardGameFrontEnd {
 		// TODO Auto-generated method stub
 		
 		Scanner sc = new Scanner(System.in);
-		boolean isOne = true;
-		while(isOne == true) {
+		System.out.println("Welcome to the Robot Simulator");
+		int isOne = 1;
+		while(isOne == 1) {
 			BCReader reader = new BCReader();
-			String buffer = sc.nextLine();
-			System.out.println("Welcome to the Robot Simulator\nEnter the file for the Board");
+			//String buffer = sc.nextLine();
+			System.out.println("Enter the file for the Board. Please enter .txt after!");
 			String newBoard = sc.nextLine();
 			reader.boardReader(newBoard);
-			System.out.println("Enter the file for the Commands");
+			System.out.println("Enter the file for the Commands. Please enter .txt after!");
 			String NewCommands = sc.nextLine();
 			reader.commandRead(NewCommands);
 			reader.startBoard();
@@ -21,10 +22,10 @@ public class BoardGameFrontEnd {
 			System.out.println("Do you with to continue? Enter true to quit");
 			String isTrue = sc.nextLine();
 			if(isTrue.equalsIgnoreCase("false")) {
-				isOne = false;
+				isOne = 0;
 			}
 			else {
-				isOne = true;
+				isOne = 1;
 			}
 			}
 		}
