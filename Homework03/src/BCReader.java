@@ -13,13 +13,13 @@ public class BCReader {
 		try {
 			File file = new File(aFile);
 			Scanner fileScanner = new Scanner(file);
-			while(fileScanner.hasNext()) {
+			while(fileScanner.hasNextLine()) {
 				String line = fileScanner.nextLine();
 				LookABoard.createBoard(fileScanner.nextLine());
 			}
 		}
 		catch(Exception e) {
-			System.out.println("Could not find the file with name"+aFile);
+			System.out.println("Could not find the file with name: "+aFile);
 			
 		}
 	}
@@ -27,10 +27,15 @@ public class BCReader {
 	//read the command
 	public void commandRead(String aFile) {
 		try {
-					
-				}
+			File file = new File(aFile);
+			Scanner fileScanner = new Scanner(file);
+			while(fileScanner.hasNextLine()) {
+				String line = fileScanner.nextLine();
+				Queue.enqueue(fileScanner.nextLine());
+			}
+		}
 		catch(Exception e) {
-			System.out.println("Could not find the file with name"+aFile);
+			System.out.println("Could not find the file with name: "+aFile);
 					
 				}
 			}
