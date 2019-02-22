@@ -27,7 +27,9 @@ public class BoardGameFrontEnd {
 			else {
 				isOne = 1;
 			}
-			}
+			}//end of whileloop
+		
+		
 		}
 
 }
