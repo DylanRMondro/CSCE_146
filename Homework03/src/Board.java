@@ -42,22 +42,42 @@ public class Board {
 			
 			//will move the robot up
 			case 1:
-				futureColCord ++;
+				if(theBoard[rowCord][colCord +1].equalsIgnoreCase("X")) {
+					System.out.println("Crash");
+				}
+				else {
+					futureColCord ++;
+				}
 				break;
 			
 			//will move the robot right
 			case 2:
-				futureRowCord++;
+				if(theBoard[rowCord +1][colCord].equalsIgnoreCase("X")) {
+					System.out.println("Crash");
+				}
+				else {
+					futureRowCord++;
+				}
 				break;
 				
 			//will move the robot down
 			case 3:
-				futureColCord --;
+				if(theBoard[rowCord][colCord -1].equalsIgnoreCase("X")) {
+					System.out.println("Crash");
+				}
+				else {
+					futureColCord --;
+				}
 				break;
 				
 			//will move the robot left
 			case 4:
-				futureRowCord --;
+				if(theBoard[rowCord -1][colCord].equalsIgnoreCase("X")) {
+					System.out.println("Crash");
+				}
+				else {
+					futureRowCord --;
+				}
 				break;
 			}//end of switch
 			
