@@ -6,7 +6,12 @@ public class BCReader {
 	private int START_COR = 0; //Starting coordinate
 	private StringLinkListQueue <String> Queue; //creates the command queue
 	private Board LookABoard = new Board();
-	private final static String DELIMITER = ",";
+	
+	//These are lines from commands.txt
+	private String up = "Move Up";
+	private String right = "Move Right";
+	private String down = "Move Down";
+	private String left = "Move Left";
 	
 	//read the board
 	public void boardReader(String aFile) {
@@ -39,4 +44,31 @@ public class BCReader {
 					
 				}
 			}
+	
+	public void doCommands() {
+		if(Queue.peek().equalsIgnoreCase(up)) {
+			LookABoard.moveRobot(1);
+			Queue.dequeue();
+			}
+		
+		if(Queue.peek().equalsIgnoreCase(right)) {
+			LookABoard.moveRobot(2);
+			Queue.dequeue();
+			}
+		
+		if(Queue.peek().equalsIgnoreCase(down)) {
+			LookABoard.moveRobot(3);
+			Queue.dequeue();
+			}
+		
+		if(Queue.peek().equalsIgnoreCase(left)) {
+			LookABoard.moveRobot(4);
+			Queue.dequeue();
+			}
+		
+		else {
+			LookABoard.moveRobot(0);
+			Queue.dequeue();
+		}
+	}
 }
