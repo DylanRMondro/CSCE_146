@@ -1,33 +1,21 @@
-import java.io.File;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
 
 //this is an example 
 public class Read {
- 
-	private GenLL<Taco> tacos;
-	public static final String DELM = "\t";
-	
-	public TacoDB() {
-		tacos = new GenLL<Taco>(); //created the LinkList taco
-	}
-	
-	public void readFromFile(String fileName) {
+	private static String aFile = "File name";
+	public void reader() {
 		try {
-			Scanner fileScanner = new Scanner(new File(fileName));
-			while(fileScanner.hasNextLine()) {
-				String fileLine = fileScanner.nextLine();
-				String[] splitLine = fileLine.split(DELM);
-				if(splitLine.length != 4)
-					continue;
-				this.addTaco(new Taco(splitLine[0],
-						splitLine[1],
-						Double.parseDouble(splitLine[2]),
-						Integer.parseInt(splitLine[3])));
+			BufferedReader br = new BufferedReader(new FileReader(aFile));
+			String line;
+			while((line = br.readLine()) != null) {
+				System.out.println(line);
 			}
-			fileScanner.close();
 		}
+		
 		catch(Exception e) {
-			System.out.println(e);
+			System.out.println("Could not find the file!");
 		}
 	}
+	
 }
