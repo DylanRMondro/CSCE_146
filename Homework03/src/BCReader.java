@@ -1,5 +1,5 @@
-import java.io.File;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
 //Dylan Mondro
 public class BCReader {
 	
@@ -7,6 +7,7 @@ public class BCReader {
 	private int START_COR = 0; //Starting coordinate
 	private StringLinkListQueue <String> Queue; //creates the command queue
 	private Board LookABoard = new Board();
+	public static final String DELM = "\t";
 	
 	//These are lines from commands.txt
 	private String up = "Move Up";
@@ -17,11 +18,10 @@ public class BCReader {
 		//read the board
 		public void boardReader(String aFile) {
 			try {
-				File file = new File(aFile);
-				Scanner fileScanner = new Scanner(file);
-				while(fileScanner.hasNextLine()) {
-					String line = fileScanner.nextLine();
-					LookABoard.createBoard(fileScanner.nextLine());
+				BufferedReader br = new BufferedReader(new FileReader(aFile));
+				String line;
+				while((line = br.readLine()) !=null) {
+					LookABoard.createBoard(line);
 				}
 			}
 			catch(Exception e) {
@@ -33,13 +33,11 @@ public class BCReader {
 		//read the command
 		public void commandRead(String aFile) {
 			try {
-				File file = new File(aFile);
-				Scanner fileScanner = new Scanner(file);
-				while(fileScanner.hasNextLine()) {
-					String line = fileScanner.nextLine();
-					Queue.enqueue(fileScanner.nextLine());
-				}
-			}
+				BufferedReader br = new BufferedReader(new FileReader(aFile));
+				String line;
+				while((line = br.readLine()) !=null) {
+					Queue.enqueue(line);
+				}			}
 			catch(Exception e) {
 				System.out.println("Could not find the file with name: "+aFile);
 						
