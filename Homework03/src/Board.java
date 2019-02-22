@@ -4,10 +4,10 @@ public class Board {
 	private int START_COR = 0; //Starting coordinate
 	public int rowCord = START_COR;//keep track of robot's row coordinate
 	public int colCord = START_COR;//Keep track of robot's column coordinate
-	char [] [] theBoard = new char[DEFF_SIZE][DEFF_SIZE];
+	String [] [] theBoard = new String[DEFF_SIZE][DEFF_SIZE];
 	
 	//will insert the information into the array
-	public void createBoard(char aData) { 
+	public void createBoard(String aData) { 
 		for(int i=0; i<theBoard.length; i++) { //row
 			for(int j=0; i<theBoard[i].length; j++) { //col
 				theBoard[i][j] = aData;
@@ -17,7 +17,7 @@ public class Board {
 	
 	//insert the robot at 0,0
 	public void insertRobot() {
-		theBoard[START_COR][START_COR] = 'O';
+		theBoard[START_COR][START_COR] = "O";
 	}
 	/*
 	 * 0 = no move
@@ -61,8 +61,8 @@ public class Board {
 				break;
 			}//end of switch
 			
-			theBoard[futureRowCord][futureColCord] = 'O';//add the robot to the new coordinate
-			theBoard[pastRowCord][pastColCord] = '_';//will remove the robot from the past coordinate
+			theBoard[futureRowCord][futureColCord] = "O";//add the robot to the new coordinate
+			theBoard[pastRowCord][pastColCord] = "_";//will remove the robot from the past coordinate
 		}
 	}
 	
