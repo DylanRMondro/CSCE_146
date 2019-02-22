@@ -50,34 +50,36 @@ public class BCReader {
 		}
 		
 		public void doCommands() {
-			if(Queue.peek().equalsIgnoreCase(up)) {
-				LookABoard.moveRobot(1);
-				Queue.dequeue();
-				LookABoard.printBoard();
+			while(Queue.peek() != null) {
+				if(Queue.peek().equalsIgnoreCase(up)) {
+					LookABoard.moveRobot(1);
+					Queue.dequeue();
+					LookABoard.printBoard();
+					}
+				
+				if(Queue.peek().equalsIgnoreCase(right)) {
+					LookABoard.moveRobot(2);
+					Queue.dequeue();
+					LookABoard.printBoard();
+					}
+				
+				if(Queue.peek().equalsIgnoreCase(down)) {
+					LookABoard.moveRobot(3);
+					Queue.dequeue();
+					LookABoard.printBoard();
+					}
+				
+				if(Queue.peek().equalsIgnoreCase(left)) {
+					LookABoard.moveRobot(4);
+					Queue.dequeue();
+					LookABoard.printBoard();
+					}
+				
+				else {
+					LookABoard.moveRobot(0);
+					Queue.dequeue();
+					LookABoard.printBoard();
 				}
-			
-			if(Queue.peek().equalsIgnoreCase(right)) {
-				LookABoard.moveRobot(2);
-				Queue.dequeue();
-				LookABoard.printBoard();
-				}
-			
-			if(Queue.peek().equalsIgnoreCase(down)) {
-				LookABoard.moveRobot(3);
-				Queue.dequeue();
-				LookABoard.printBoard();
-				}
-			
-			if(Queue.peek().equalsIgnoreCase(left)) {
-				LookABoard.moveRobot(4);
-				Queue.dequeue();
-				LookABoard.printBoard();
-				}
-			
-			else {
-				LookABoard.moveRobot(0);
-				Queue.dequeue();
-				LookABoard.printBoard();
 			}
 		}
 
